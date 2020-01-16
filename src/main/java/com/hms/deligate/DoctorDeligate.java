@@ -28,11 +28,11 @@ public class DoctorDeligate {
     return doctor;
   }
 
-  public boolean updateDoctor(String doctorSpecialization, int experience, int id)
+  public boolean updateDoctor( int experience,String doctorSpecialization, int id)
       throws BusinessExceptionMapper, SQLException {
     boolean status = false;
     try {
-      status = doctorHelper.updateDoctor(doctorSpecialization, experience, id);
+      status = doctorHelper.updateDoctor( experience,doctorSpecialization, id);
     } catch (Exception e) {
       e.getMessage();
     }

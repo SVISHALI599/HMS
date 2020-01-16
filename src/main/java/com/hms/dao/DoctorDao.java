@@ -24,14 +24,15 @@ public class DoctorDao {
   ResultSet resultSet = null;
   int doctorId;
 
+  
   public int insertUser(int userId, Doctor userData) throws BusinessExceptionMapper, SQLException {
     connection = DaoConnection.getConnection();
-    String insertQuery = DAO_MESSAGE_BUNDLE.getString(HMSQPI1);
+    String insertQuery = DAO_MESSAGE_BUNDLE.getString(HMSQDI1);
     preStatement = connection.prepareStatement(insertQuery);
     preStatement.setInt(1, userId);
     preStatement.setString(2, userData.getDoctorSpicialization());
     preStatement.setInt(3, userData.getDoctorExperience());
-    preStatement.executeUpdate(insertQuery);
+    preStatement.executeQuery(insertQuery);
     resultSet = preStatement.getGeneratedKeys();
     doctorId = resultSet.getInt(1);
     connection.close();
@@ -70,7 +71,7 @@ public class DoctorDao {
     return doctorData;
   }
 
-  public boolean updateUser(String doctorSpecialization, int doctorExperience, int id) throws SQLException {
+  public boolean updateUser( int doctorExperience, String doctorSpecialization,int id) throws SQLException {
     connection = DaoConnection.getConnection();
     String updateQuery = DAO_MESSAGE_BUNDLE.getString(HMSDUQ1);
 

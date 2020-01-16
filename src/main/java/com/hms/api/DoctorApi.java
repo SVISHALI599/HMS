@@ -29,9 +29,9 @@ public class DoctorApi {
   }
 @POST
 @Path("/update")
-  public boolean updateDoctor(String Specialization, int experience, int id)
+  public boolean updateDoctor( int experience, String Specialization,int id)
       throws BusinessExceptionMapper, SQLException {
-    boolean status = doctorDeligate.updateDoctor(Specialization, experience, id);
+    boolean status = doctorDeligate.updateDoctor( experience, Specialization,id);
     return status;
   }
 @GET

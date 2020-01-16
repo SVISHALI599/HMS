@@ -29,10 +29,10 @@ public class DoctorHelper {
     return doctorDataList;
   }
 
-  public boolean updateDoctor(String doctorSpecialization, int doctorExperience, int id) throws SQLException {
+  public boolean updateDoctor( int doctorExperience, String doctorSpecialization,int id) throws SQLException {
     boolean status = false;
     try {
-      status = doctorDao.updateUser(doctorSpecialization, doctorExperience, id);
+      status = doctorDao.updateUser( doctorExperience,doctorSpecialization, id);
       return status;
     } catch (Exception e) {
       e.getMessage();
